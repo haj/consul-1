@@ -137,6 +137,7 @@ es:
         heading_filter_all: Todas las partidas
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
+        valuator_group_filter_all: Todos los grupos
         tags_filter_all: Todas las etiquetas
         advanced_filters: Filtros avanzados
         placeholder: Buscar proyectos
@@ -901,6 +902,7 @@ es:
         geozone_filter_all: Todos los ámbitos de actuación
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
+        valuator_group_filter_all: Todos los grupos
         tags_filter_all: Todas las etiquetas
         filters:
           valuation_open: Abiertas
