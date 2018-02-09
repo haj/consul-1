@@ -491,7 +491,25 @@ feature 'Emails' do
 
   end
 
+  context "Newsletter" do
+
+    scenario "Send newsletter email to selected users" do
+      admin = create(:administrator)
+      login_as(admin.user)
+
+      deliver_newsletter
+
+      email = open_last_email
+      expect(email).to have_subject('This is a subject')
+      expect(email).to deliver_to('user1@example.com')
+      expect(email).to deliver_from('noreply@consul.dev')
+      expect(email).to have_body_text('This is a body')
+    end
+
+  end
+
   context "Users without email" do
+
     scenario "should not receive emails", :js do
       user = create(:user, :verified, email_on_comment: true)
       proposal = create(:proposal, author: user)
@@ -500,5 +518,6 @@ feature 'Emails' do
 
       expect { open_last_email }.to raise_error "No email has been sent!"
     end
+
   end
 end
